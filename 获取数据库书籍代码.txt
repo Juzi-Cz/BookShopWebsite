@@ -1,0 +1,48 @@
+<!-- 这是php的代码 -->
+    <?php
+        if(session_status() != PHP_SESSION_ACTIVE) session_start(); 
+        if(isset($_SESSION['cart']))
+            $cart = $_SESSION['cart'];
+        else
+            $cart = [];
+        foreach ($cart as $bookid => $booknum) { 
+            for($i=0;$i<count($booksArr);$i++)
+                if($booksArr[$i][1] == $bookid)
+                    {
+                        $onebook = $booksArr[$i];
+                        break;
+                    }
+            
+        }
+
+     
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "root";
+                    $dbname = "mydb";
+                    
+                    // 创建连接
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    // Check connection
+                    if ($conn->connect_error) {
+                        die("连接失败: " . $conn->connect_error);
+                    } 
+                    
+                    $sql = "SELECT book_src, book_model, book_info, book_price, book_abc FROM books";
+                    $result = $conn->query($sql);
+                    
+                    if ($result->num_rows > 0) {
+                        // 输出数据
+while($row = $result->fetch_assoc()) {
+    echo "Src: " . $row["book_src"]. " - Model: " . $row["book_model"]. " - Info: " . $row["book_info"]. "<br>";
+}
+                    } else {
+                        echo "0 结果";
+                    }
+                    $conn->close();
+               
+
+
+
+    ?>
+<!-- 这是php的代码 -->

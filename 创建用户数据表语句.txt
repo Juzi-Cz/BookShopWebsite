@@ -1,0 +1,55 @@
+create database mydb ;
+			use mydb;
+
+			create table user(
+			   user_id int auto_increment PRIMARY KEY,
+			   user_name varchar(20) not null,
+			   user_psw varchar(40)  not null,
+			   user_sex char(4) not null,
+			   birthday date,
+			   birthplace varchar(20) ,
+			   
+			   interest varchar(50) ,
+			   
+			   comment  text,
+			   userType int default 1
+			)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+  insert into user(user_name,user_psw ,user_sex ,birthday,birthplace ,interest,comment ) 
+  value('gxut','1234','男','1999-10-25','广西','篮球','兔子吃萝卜');
+
+
+
+<--------------------------------------------------------------------------------------->
+			use mydb;
+
+			create table books(
+			   book_id int auto_increment PRIMARY KEY,
+                    
+			   book_src varchar(40) not null,
+			   book_model varchar(40)  not null,
+			   book_info varchar(40) not null,
+			   book_price varchar(40),
+			   book_abc varchar(20) ,
+		
+			   
+			   userType int default 1
+			)ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+  insert into books(book_src ,book_model ,book_info,  book_price ,  book_abc ) 
+  value("Images/phone1.jpg",  '小米10 至尊版',  '144Hz[7档]变速高刷屏',  '2000',  'a'), 
+  ("Images/phone3.jpg", "Redmi K30S 至尊纪念版", "120Hz全面屏，天玑1000+旗舰处理器", 2199,"b"),
+  ("Images/phone2.jpg", "Redmi K30 至尊版", "120X 变焦/120W秒充/120Hz屏幕", 2599,"c"),
+  ("Images/phone4.jpg", "腾讯黑鲨3S", "骁龙865处理器，120Hz刷新率", 2999,"d"),
+  ("Images/phone5.jpg", "Redmi K30 Pro", "120X 变焦/120W秒充/120Hz屏幕", 3199,"e"),
+  ("Images/phone6.jpg", "小米10 青春版 5G", "双模5G，骁龙865，弹出全面屏", 4299,"f");
+
+
+
+
+
+
+
+
+
+
